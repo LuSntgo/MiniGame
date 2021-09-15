@@ -16,16 +16,26 @@
     }
 
     function limpaTela() {
-    pincel.clearRect(0, 0, 600, 400);
+
+        pincel.clearRect(0, 0, 600, 400);
     }
 
     var x = 20;
 
+    var sentido = 1;
+
     function atualizaTela() {
 
-    limpaTela();
-    desenhaCirculo(x, 20, 10);
-    x++;
+        limpaTela();
+
+        if( x > 600) {
+            sentido = -1;
+        } else if (x < 0) {
+            sentido = 1;
+        } 
+
+        desenhaCirculo(x, 20, 10);
+        x = x + sentido;
     }
 
     setInterval(atualizaTela, 10);
