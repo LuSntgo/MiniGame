@@ -15,15 +15,19 @@
         pincel.fill();
     }
 
-        function limpaTela() {
+    function limpaTela() {
+    pincel.clearRect(0, 0, 600, 400);
+    }
 
-            pincel.clearRect(0, 0, 600, 400);
+    var x = 20;
 
-        }
+    function atualizaTela() {
 
-        for(var x = 20; x < 600; x++) {
-            limpaTela();
-            desenhaCirculo(x, 20, 10);
+    limpaTela();
+    desenhaCirculo(x, 20, 10);
+    x++;
+    }
 
-        }
+    setInterval(atualizaTela, 10);
+
 </script>
